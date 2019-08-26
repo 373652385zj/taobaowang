@@ -320,7 +320,7 @@ window.onload = function () {
         clearInterval(setTime1)
     }
     ltrblThreeline.onmouseleave = () => {
-        setInterval(() => {
+        setTime1 = setInterval(() => {
             ltrbl_reduce_left_move()
         }, setInterval_time)
     }
@@ -398,7 +398,6 @@ window.onload = function () {
     var fourmoduleCont = document.querySelector('.fourmodule_cont')
     var fourmoduleCont_li = document.querySelectorAll('.fourmodule_cont li')
     // 对第九个模块的按钮以及弹层做样式功能设置
-    fourmodule_li[0].classList.add('h')
     for (let i = 0; i < 3; i++) {
         fourmodule_li[i].onmouseover = () => {
             for (let j = 0; j < 3; j++) {
@@ -419,6 +418,44 @@ window.onload = function () {
         fourmoduleCont.classList.add('close')
         for(let i=0;i<3;i++) {
             fourmodule_li[i].classList.remove('h')
+        }
+    }
+
+    // 对第十个模块进行轮播广告进行样式设置
+    var lbsTwelayer = document.querySelector('.lb_slide_twolayer')
+    var lbsTwelayer_top = 0
+    lbsTwelayer.setAttribute('style','top:0;')
+    function lbsTwelayer_move() {
+        lbsTwelayer_top = lbsTwelayer_top - 73
+        if(lbsTwelayer_top == -(73*3)) {
+            lbsTwelayer_top = 0
+            console.log(lbsTwelayer_top)
+        }
+        lbsTwelayer.setAttribute('style','top:' + lbsTwelayer_top + ';')
+    }
+    var lbsTwelayer_int = setInterval(() => {
+        lbsTwelayer_move()
+    },setInterval_time)
+    lbsTwelayer.onmouseover = () => {
+        clearInterval(lbsTwelayer_int)
+        inter
+    }
+    lbsTwelayer.onmouseleave = () => {
+        lbsTwelayer_int = setInterval(() => {
+            lbsTwelayer_move()
+        },setInterval_time)
+    }
+
+    // 对第十一个模块进行样式设置
+    // codeBox
+    var codeBox = document.querySelectorAll('.codeBox')
+    var appIco = document.querySelectorAll('.appIco')
+    for(let i=0;i<appIco.length;i++) {
+        appIco[i].onmouseover = () => {
+            codeBox[i].classList.remove('hide')
+        }
+        appIco[i].onmouseleave = () => {
+            codeBox[i].classList.add('hide')
         }
     }
 

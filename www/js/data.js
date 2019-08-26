@@ -110,6 +110,33 @@ for(let l=0;l<document.querySelectorAll('.service-float-item').length;l++){
 }
 
 
+var goodsList = document.querySelectorAll(".list.clearfix.goods-list a"),str = ""
+for(i=0;i<goodsList.length;i++){
+	var href = goodsList[i].getAttribute("href")
+	var src = goodsList[i].children[0].children[0].getAttribute("src")
+	var title = goodsList[i].children[1].children[0].innerText
+	var intro = goodsList[i].children[1].children[1].innerText
+	var evaluate = goodsList[i].children[1].children[2].innerText//parseInt()取数字
+	str += "('1','"+href+"','"+src+"','"+title+"','"+intro+"','"+parseInt(evaluate.substring(1,evaluate.length))+"'),"
+	console.group(i+1)
+	console.log(href+'\n')	
+	console.log(src+'\n')
+	console.log(title+'\n')
+	console.log(intro+'\n')
+	console.log(parseInt(evaluate.substring(1,evaluate.length)))
+	console.groupEnd(i+1)
+}
+str
+
+
+('3','//qiang.taobao.com/?itemId=574995160321','//img.alicdn.com/tps/i4/TB2buamoYorBKNjSZFjXXc_SpXa_!!0-juitemmedia.jpg_360x360q90.jpg','超大面包蟹2只装','拍下减30第二份半价','128','268.00'),('3','//qiang.taobao.com/?itemId=595940269897','//img.alicdn.com/tps/i4/O1CN016h2zET1sZkCh0Jp4o_!!0-juitemmedia.jpg_360x360q90.jpg','越南进口16度甜海边板栗薯','第2份1元共发10斤','19.9','99.00'),('3','//qiang.taobao.com/?itemId=576082846608','//img.alicdn.com/tps/i4/O1CN0133QBJP1UHpwIldCda_!!0-juitemmedia.jpg_360x360q90.jpg','智利冰鲜三文鱼中段送芥末酱油','下单立减10元','74.99','168.00')
+
+
+
+
+
+
+
 
 
 */

@@ -142,9 +142,11 @@ server.use('/', (req, res) => {
                     bodier_data2 = [],
                     bodier_data3 = [],
                     bodier_data4 = [],
+                    bodier_data5 = [],
                     bodier_data7 = [],
                     bodier_data8 = [],
-                    bodier_data9 = []
+                    bodier_data9 = [],
+                    bodier_data10 = []
                     for(let i=0;i<bodier_data.length;i++) {
                         if(bodier_data[i].box_type == 1) {
                             bodier_data1.push(bodier_data[i])
@@ -154,12 +156,16 @@ server.use('/', (req, res) => {
                             bodier_data3.push(bodier_data[i])
                         }else if(bodier_data[i].box_type == 4) {
                             bodier_data4.push(bodier_data[i])
+                        }else if(bodier_data[i].box_type == 5) {
+                            bodier_data5.push(bodier_data[i])
                         }else if(bodier_data[i].box_type == 7) {
                             bodier_data7.push(bodier_data[i])
                         }else if(bodier_data[i].box_type == 8) {
                             bodier_data8.push(bodier_data[i])
                         }else if(bodier_data[i].box_type == 9) {
                             bodier_data9.push(bodier_data[i])
+                        }else if(bodier_data[i].box_type == 10) {
+                            bodier_data10.push(bodier_data[i])
                         }
                     }
                     // console.log(bodier_data4)
@@ -176,9 +182,11 @@ server.use('/', (req, res) => {
                         bodierdata2: bodier_data2,
                         bodierdata3: bodier_data3,
                         bodierdata4: bodier_data4,
+                        bodierdata5: bodier_data5,
                         bodierdata7: bodier_data7,
                         bodierdata8: bodier_data8,
                         bodierdata9: bodier_data9,
+                        bodierdata10: bodier_data10,
 
                         //  将 页尾 数据传到前端
                         footerdata1: mysql_footerdata1,
